@@ -1,0 +1,18 @@
+# ninja log v6
+19	84	7605467905679601	E:/Program Files/GitHub/Notepad/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	64e9bca2730809c0
+72	553	7605466759576250	E:/Program Files/GitHub/Notepad/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/Notepad_autogen/timestamp	e89612541c681969
+72	553	7605466759576250	Notepad_autogen/timestamp	e89612541c681969
+72	553	7605466759576250	E:/Program Files/GitHub/Notepad/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/Notepad_autogen/mocs_compilation.cpp	e89612541c681969
+558	2553	7605466760295911	CMakeFiles/Notepad.dir/Notepad_autogen/mocs_compilation.cpp.obj	ca995337683d18a8
+72	553	7605466759576250	Notepad_autogen/mocs_compilation.cpp	e89612541c681969
+563	2804	7605466760355337	CMakeFiles/Notepad.dir/mainwindow.cpp.obj	109b7a9591c9a67a
+560	2703	7605466760325392	CMakeFiles/Notepad.dir/main.cpp.obj	1fafbcdb5ec85d23
+2805	3068	7605466782763009	Notepad.exe	4521eabe3a31eabd
+84	690	7605467911334955	build.ninja	1c4aee19e1cfcc74
+22	92	7605467912272836	E:/Program Files/GitHub/Notepad/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	64e9bca2730809c0
+101	257	7605467913060712	Notepad_autogen/timestamp	e89612541c681969
+101	257	7605467913060712	Notepad_autogen/mocs_compilation.cpp	e89612541c681969
+101	257	7605467913060712	E:/Program Files/GitHub/Notepad/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/Notepad_autogen/timestamp	e89612541c681969
+101	257	7605467913060712	E:/Program Files/GitHub/Notepad/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/Notepad_autogen/mocs_compilation.cpp	e89612541c681969
+258	5048	7605467914628277	CMakeFiles/Notepad.dir/mainwindow.cpp.obj	109b7a9591c9a67a
+5049	5742	7605467962540380	Notepad.exe	4521eabe3a31eabd
