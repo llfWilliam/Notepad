@@ -43,9 +43,11 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "E:/Program Files/GitHub/Notep
 set(OLD_GLOB
   "E:/Program Files/GitHub/Notepad/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CompilerIdCXX/CMakeCXXCompilerId.cpp"
   "E:/Program Files/GitHub/Notepad/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/Notepad_autogen/EWIEGA46WW/moc_mainwindow.cpp"
+  "E:/Program Files/GitHub/Notepad/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/Notepad_autogen/EWIEGA46WW/moc_notepad.cpp"
   "E:/Program Files/GitHub/Notepad/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/Notepad_autogen/mocs_compilation.cpp"
   "E:/Program Files/GitHub/Notepad/main.cpp"
   "E:/Program Files/GitHub/Notepad/mainwindow.cpp"
+  "E:/Program Files/GitHub/Notepad/notepad.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -67,6 +69,7 @@ set(OLD_GLOB
   "E:/Program Files/GitHub/Notepad/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/Notepad_autogen/include/ui_mainwindow.h"
   "E:/Program Files/GitHub/Notepad/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/Notepad_autogen/moc_predefs.h"
   "E:/Program Files/GitHub/Notepad/mainwindow.h"
+  "E:/Program Files/GitHub/Notepad/notepad.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

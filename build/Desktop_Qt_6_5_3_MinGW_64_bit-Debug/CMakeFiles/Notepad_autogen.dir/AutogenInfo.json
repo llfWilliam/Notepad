@@ -268,6 +268,12 @@
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
 			null
+		],
+		[
+			"E:/Program Files/GitHub/Notepad/notepad.h",
+			"MU",
+			"EWIEGA46WW/moc_notepad.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -341,7 +347,8 @@
 	"SOURCES" : 
 	[
 		[ "E:/Program Files/GitHub/Notepad/main.cpp", "MU", null ],
-		[ "E:/Program Files/GitHub/Notepad/mainwindow.cpp", "MU", null ]
+		[ "E:/Program Files/GitHub/Notepad/mainwindow.cpp", "MU", null ],
+		[ "E:/Program Files/GitHub/Notepad/notepad.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
