@@ -17,8 +17,43 @@ Notepad::Notepad(QWidget *parent)
 }
 
 void Notepad::newFile() {
+    // 检查当前文档是否已修改
+    if (textEdit->document()->isModified()) {
+        // 提示用户保存当前未保存的更改
+        QMessageBox::StandardButton reply;
+        reply = QMessageBox::question(this, "保存更改",
+                                      "当前文档有未保存的更改。是否保存？",
+                                      QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
+
+        if (reply == QMessageBox::Yes) {
+            // 用户选择保存，调用保存函数
+            if (!saveFile()) {
+                // 如果保存失败，返回，不创建新文件
+                return;
+            }
+        } else if (reply == QMessageBox::Cancel) {
+            // 用户选择取消，返回，不创建新文件
+            return;
+        }
+    }
+
+    // 提示用户选择新文件的保存路径
+    QString fileName = QFileDialog::getSaveFileName(this, "新建文件", "",
+                                                    "文本文件 (*.txt);;所有文件 (*)");
+    if (fileName.isEmpty()) {
+        // 用户取消了文件选择，返回
+        return;
+    }
+
+    // 清空文本编辑器
     textEdit->clear();
-    currentFile = "";  // 清空当前文件路径，表示新建文件
+
+    // 更新当前文件路径
+    currentFile = fileName;
+    setWindowTitle(QFileInfo(currentFile).fileName() + " - 记事本");
+
+    // 保存新文件
+    saveFile();
 }
 
 void Notepad::openFile() {
@@ -36,27 +71,29 @@ void Notepad::openFile() {
     }
 }
 
-void Notepad::saveFile() {
+bool Notepad::saveFile() {
     if (currentFile.isEmpty()) {
-        saveFileAs();  // 如果没有文件路径，则执行 "另存为"
+        return saveFileAs();
     } else {
         QFile file(currentFile);
-        if (file.open(QFile::WriteOnly | QFile::Text)) {
-            QTextStream out(&file);
-            out << textEdit->toPlainText();
-            file.close();
-        } else {
-            QMessageBox::warning(this, "Error", "Cannot save file");
+        if (!file.open(QFile::WriteOnly | QFile::Text)) {
+            QMessageBox::warning(this, "Error", "Cannot save file: " + file.errorString());
+            return false;
         }
+        QTextStream out(&file);
+        out << textEdit->toPlainText();
+        file.close();
+        textEdit->document()->setModified(false);
+        return true;
     }
 }
-
-void Notepad::saveFileAs() {
+bool Notepad::saveFileAs() {
     QString fileName = QFileDialog::getSaveFileName(this, "Save File", "", "Text Files (*.txt);;All Files (*)");
-    if (!fileName.isEmpty()) {
-        currentFile = fileName;  // 更新当前文件路径
-        saveFile();  // 调用 `saveFile()` 进行保存
+    if (fileName.isEmpty()) {
+        return false; // 用户取消了保存操作
     }
+    currentFile = fileName;
+    return saveFile();
 }
 void Notepad::toggleNightMode()
 {
@@ -86,7 +123,26 @@ void Notepad::toggleNightMode()
             QMenu::item::selected {
                 background-color: #454545;
             }
-        )");
+            QMessageBox {
+                background-color: #2d2d2d;
+                color: #ffffff;
+            }
+            QMessageBox QLabel {
+                color: #ffffff;
+            }
+            QMessageBox QPushButton {
+                background-color: #555555;
+                color: #ffffff;
+                border: none;
+                padding: 5px 10px;
+            }
+            QMessageBox QPushButton:hover {
+                background-color: #777777;
+            }
+            QMessageBox QPushButton:pressed {
+                background-color: #999999;
+            }
+            )");
     } else {
         qApp->setStyleSheet("");
     }

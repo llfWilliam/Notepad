@@ -105,8 +105,8 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSNotepadENDCLASS[] = {
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Bool,
+    QMetaType::Bool,
     QMetaType::Void,
 
        0        // eod
@@ -126,9 +126,9 @@ Q_CONSTINIT const QMetaObject Notepad::staticMetaObject = { {
         // method 'openFile'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'saveFile'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<bool, std::false_type>,
         // method 'saveFileAs'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<bool, std::false_type>,
         // method 'toggleNightMode'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
@@ -143,13 +143,14 @@ void Notepad::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         switch (_id) {
         case 0: _t->newFile(); break;
         case 1: _t->openFile(); break;
-        case 2: _t->saveFile(); break;
-        case 3: _t->saveFileAs(); break;
+        case 2: { bool _r = _t->saveFile();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
+        case 3: { bool _r = _t->saveFileAs();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         case 4: _t->toggleNightMode(); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *Notepad::metaObject() const

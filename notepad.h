@@ -13,8 +13,8 @@ public:
 private slots:
     void newFile(); // 槽函数：创建新文件
     void openFile(); // 槽函数：打开文件
-    void saveFile(); // 槽函数：保存文件
-    void saveFileAs();
+    bool saveFile(); // 槽函数：保存文件
+    bool saveFileAs();
     void toggleNightMode();
 
 private:
