@@ -15,9 +15,11 @@ private slots:
     void openFile(); // 槽函数：打开文件
     void saveFile(); // 槽函数：保存文件
     void saveFileAs();
+    void toggleNightMode();
 
 private:
     void createMenu();
+    bool isDarkMode = false;
     QTextEdit *textEdit;
     QString currentFile;
 };
