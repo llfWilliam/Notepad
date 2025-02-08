@@ -14,10 +14,12 @@ private slots:
     void newFile(); // 槽函数：创建新文件
     void openFile(); // 槽函数：打开文件
     void saveFile(); // 槽函数：保存文件
+    void saveFileAs();
 
 private:
-    void createMenu(); // 创建菜单栏的私有函数
-    QTextEdit *textEdit; // 指向 QTextEdit 的指针，文本编辑器组件
+    void createMenu();
+    QTextEdit *textEdit;
+    QString currentFile;
 };
 
 #endif // NOTEPAD_H
